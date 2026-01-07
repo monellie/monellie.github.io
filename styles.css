@@ -1,0 +1,145 @@
+*{
+    margin:	0% 0% 0% 0%;
+    padding: 0;
+}
+.content-on-img > *:first-child {
+  padding-top: 0;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("fonts/InterVariable.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "InterItalic";
+    src: url("fonts/InterVariable-Italic.ttf");
+    font-weight: italic;
+}
+
+@font-face {
+    font-family: "InterBold";
+    src: url("fonts/InterVariable.ttf");
+    font-weight: bold;
+}
+
+body {
+    background-image: url("images/mtns-van.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "Inter";
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+header {
+    color: #FF6392;
+    font-family: "Inter";
+    font-size: 2rem;
+    padding: 0rem 0rem 4rem 0rem;
+    text-align: center;
+}
+
+#welcome {
+    margin-top: 4rem;
+}
+
+.text-box {
+    background-color: rgba(249, 249, 249, 0.75);
+    color: #FF6392;
+    padding: 4rem 6rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.content-on-img {
+  position: relative;
+  padding: 2rem;
+}
+
+.content-on-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(206, 241, 255, 0.75);
+  z-index: 0;
+}
+
+.content-on-img > * {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: auto;
+}
+
+nav {
+    font-family: "InterBold";
+    background-color: rgba(206, 241, 255, 0.75);
+}
+
+nav a {
+    /* background-color: rgba(206, 241, 255, 0.75); */
+    color: #FFA478;
+    /* height: 5rem; */
+    padding: 1rem;
+    /* padding-bottom: 1rem;
+    padding-top: 1rem; */
+    /* padding: 6rem */
+    margin: 0rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #FF6392;
+    background-color: rgba(206, 241, 255);
+}
+
+section, h2 {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.info {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #FF6392;
+  color: #f9f9f9;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+/* header {
+  color: #FF6392;
+  font-family: "InterBold";
+  font-size: x-large;
+  margin: 0;
+  background-color: #FF6392;
+  /* padding: 4rem 1rem; */
+  /* text-align: center; */
+/* }
+
+.content-on-img {
+    background-color: #FF6392;
+} */
