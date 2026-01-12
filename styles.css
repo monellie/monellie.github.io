@@ -1,10 +1,10 @@
-*{
-    margin:	0% 0% 0% 0%;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-.content-on-img > *:first-child {
+/* .content-on-img > *:first-child {
   padding-top: 0;
-}
+} */
 @font-face {
     font-family: "Inter";
     src: url("fonts/InterVariable.ttf");
@@ -35,6 +35,8 @@ body {
     color: #000;
     position: relative;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 body::before {
@@ -42,6 +44,16 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
+}
+
+.who-am-i {
+    text-align: center;
+}
+
+.who-am-i hr {
+    border: 0.5px dashed #444545;
+    width: 80%;
+    margin: auto
 }
 
 header {
@@ -52,8 +64,11 @@ header {
     text-align: center;
 }
 
-#welcome {
-    margin-top: 4rem;
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .text-box {
@@ -65,23 +80,26 @@ header {
 }
 
 .content-on-img {
-  position: relative;
-  padding: 2rem;
+    position: relative;
+    padding: 2rem;
+    flex: 1;
 }
 
 .content-on-img::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(206, 241, 255, 0.75);
+  background-color: rgba(206, 241, 255, 0.9);
   z-index: 0;
+  flex: 1;
 }
 
 .content-on-img > * {
   position: relative;
   z-index: 1;
-  max-width: 800px;
+  max-width: 700px;
   margin: auto;
+  flex: 1;
 }
 
 nav {
@@ -90,13 +108,8 @@ nav {
 }
 
 nav a {
-    /* background-color: rgba(206, 241, 255, 0.75); */
     color: #FFA478;
-    /* height: 5rem; */
     padding: 1rem;
-    /* padding-bottom: 1rem;
-    padding-top: 1rem; */
-    /* padding: 6rem */
     margin: 0rem;
     text-decoration: none;
     display: inline-block;
@@ -105,6 +118,23 @@ nav a {
 nav a:hover {
     color: #FF6392;
     background-color: rgba(206, 241, 255);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
 }
 
 section, h2 {
@@ -130,16 +160,7 @@ body > * {
   position: relative;
   z-index: 1;
 }
-/* header {
-  color: #FF6392;
-  font-family: "InterBold";
-  font-size: x-large;
-  margin: 0;
-  background-color: #FF6392;
-  /* padding: 4rem 1rem; */
-  /* text-align: center; */
-/* }
 
-.content-on-img {
-    background-color: #FF6392;
-} */
+::selection {
+    background: rgba(255, 164, 120, 0.5);
+}
