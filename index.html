@@ -1,107 +1,1290 @@
-<!DOCTYPE html>
+<p class="subtitle">Software Engineering Student @<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monellie's Website</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monellie Ghaffari - UWaterloo SE Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 1.2rem 2rem;
+            border-bottom: 2px solid transparent;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+            background: rgba(255, 215, 0, 0.05);
+            border-bottom-color: #FFD700;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #FFD700;
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 215, 0, 0.6);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            padding: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5)); }
+            50% { filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8)); }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #aaa;
+            margin-bottom: 2rem;
+        }
+
+        .hero-weather {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            margin: 2rem auto 0;
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-weather h3 {
+            color: #FFD700;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 215, 0, 0.1);
+            border-color: rgba(255, 215, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+            border-color: rgba(255, 215, 0, 0.4);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+        }
+
+        .project-desc {
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+
+        .project-features {
+            color: #bbb;
+            font-size: 0.9rem;
+            margin: 0 0 1rem 1.2rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .project-features li {
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #FFD700;
+        }
+
+        .terminal {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .terminal-line {
+            margin: 0.5rem 0;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .terminal-line:nth-child(1) { animation-delay: 0.5s; }
+        .terminal-line:nth-child(2) { animation-delay: 1s; }
+        .terminal-line:nth-child(3) { animation-delay: 1.5s; }
+        .terminal-line:nth-child(4) { animation-delay: 2s; }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .prompt { color: #FFD700; }
+        .output { color: #4CAF50; }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .contact-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 215, 0, 0.1);
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .contact-card p {
+            color: #aaa;
+        }
+
+        .contact-link:hover p {
+            color: #FFD700;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            margin-top: 4rem;
+            color: #666;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            .section { padding: 3rem 1rem; }
+            .nav-links {
+                flex-wrap: wrap;
+                font-size: 0.85rem;
+            }
+            .nav-links a {
+                padding: 1rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .github-activity {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .badge {
+            text-align: center;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            min-width: 100px;
+        }
+
+        .badge-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-label {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .loading {
+            color: #aaa;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .github-profile {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .github-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #FFD700;
+        }
+
+        .github-info h4 {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .github-info p {
+            color: #aaa;
+            margin: 0.25rem 0;
+        }
+
+        .github-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .stat-item-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .stat-item-label {
+            color: #aaa;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+
+        .repos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .repo-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .repo-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .repo-name {
+            color: #FFD700;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .repo-desc {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .repo-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .repo-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .weather-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .weather-main {
+            text-align: center;
+        }
+
+        .weather-temp {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .weather-desc {
+            font-size: 1rem;
+            color: #aaa;
+            margin-top: 0.25rem;
+        }
+
+        .weather-icon {
+            font-size: 3rem;
+        }
+
+        .weather-details {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .weather-detail {
+            text-align: center;
+        }
+
+        .weather-detail-label {
+            color: #aaa;
+            font-size: 0.75rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .weather-detail-value {
+            color: #FFD700;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .weather-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            .github-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            .github-stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <a href="#other">Other</a>
-        </nav>
-        <div class="hero">
-            <div class="text-box">
-                <h1>Monellie Ghaffari</h1>
-                <p class="subtitle">
-                    Software Engineering Student @ UWaterloo | 1B
-                </p>
+    <nav>
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#courses">Courses</a>
+                <a href="#projects">Projects</a>
+                <a href="#stats">Stats</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="content-on-img">
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <p class="page-text">
-                Hi! My name is Monellie Ghaffari. I'm a first-year Software Engineering student at the University of Waterloo currently in my 1B term. I love building things that solve real problems and picking up new technologies along the way. I'm looking for a Summer 2025 co-op where I can contribute to meaningful projects and keep growing as a developer.
-            </p>
+    <div class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1>Monellie Ghaffari</h1>
+            <p class="subtitle">Software Engineering Student @ UWaterloo | Currently in 1B</p>
+            
+            <div class="hero-weather">
+                <h3><span style="font-size: 1.2rem;">🎓</span> Campus Weather - Waterloo, ON</h3>
+                <div id="hero-weather-info">
+                    <div class="loading" style="padding: 0.5rem;">Loading weather...</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </div>
 
-            <div class="terminal">
-                <div class="terminal-line">
-                    <span class="prompt">$ student.getCurrentStatus()
+    <div class="section" id="about">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="terminal">
+            <div class="terminal-line"><span class="prompt">$</span> student.getCurrentStatus()</div>
+            <div class="terminal-line"><span class="output">→ Currently in 1B at University of Waterloo</span></div>
+            <div class="terminal-line"><span class="output">→ Actively seeking Summer 2025 Co-op opportunities</span></div>
+            <div class="terminal-line"><span class="output">→ Passionate about building impactful software solutions</span></div>
+        </div>
+        <p style="text-align: center; color: #aaa; max-width: 800px; margin: 2rem auto; line-height: 1.8;">
+            I'm a first-year Software Engineering student at the University of Waterloo currently in my 1B term, with a passion for creating 
+            innovative solutions and learning new technologies. I'm eager to apply my skills in a Summer 2025 co-op role where 
+            I can contribute to meaningful projects while continuing to grow as a developer.
+        </p>
+    </div>
+
+    <div class="section" id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        
+        <div style="margin-bottom: 3rem;">
+            <h3 style="color: #FFD700; margin-bottom: 1.5rem; font-size: 1.3rem;">Languages</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>C</h3>
                 </div>
-                <div class="terminal-line">- Currently in 1B at UWaterloo</div>
-                <div class="terminal-line">- Seeking Summer 2026 Co-op</div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>C++</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">☕</div>
+                    <h3>Java</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>HTML</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📜</div>
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎮</div>
+                    <h3>Processing</h3>
+                </div>
             </div>
-        </section>
-        <section id="skills">
-            <h2 class="section-title">Skills</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="icon">🥋</div>
-                    <h3 class="card-title">Karate</h3>
-                    <p>Black belt, instructor</p>
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+            <h3 style="color: #FFD700; margin-bottom: 1.5rem; font-size: 1.3rem;">Tools & Frameworks</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🔧</div>
+                    <h3>Git</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🐙</div>
+                    <h3>GitHub</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>VS Code</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>MySQL</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🌶️</div>
+                    <h3>Flask</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🧪</div>
+                    <h3>Pytest</h3>
                 </div>
             </div>
-        </section>
-        <section id="projects">
-            <h2 class="section-title">Projects</h2>
-            <p class="page-text">Here I'll probably put up projects I've worked on.</p>
-            <div class="grid">
-                <div class="card">
-                    <div class="icon">1️⃣</div>
-                    <h3 class="card-title">Foodtopia</h3>
-                    <p>Educational Java game for kids</p>
-                    <ul>
-                        <li>Java Swing</li>
-                        <li>Collision detection</li>
-                    </ul>
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+            <h3 style="color: #FFD700; margin-bottom: 1.5rem; font-size: 1.3rem;">Methodologies & Concepts</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🔄</div>
+                    <h3>Agile/Scrum</h3>
                 </div>
-                <div class="card">
-                    <div class="icon">2️⃣</div>
-                    <h3 class="card-title">Project2</h3>
-                    <p>description</p>
+                <div class="skill-card">
+                    <div class="skill-icon">🧩</div>
+                    <h3>OOP</h3>
                 </div>
-                <div class="card">
-                    <div class="icon">3️⃣</div>
-                    <h3 class="card-title">Project3</h3>
-                    <p>description</p>
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3>Algorithms</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🏗️</div>
+                    <h3>Software Design</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🐛</div>
+                    <h3>Debugging</h3>
                 </div>
             </div>
-        </section>
-        <section id="contact">
-            <h2 class="section-title">Contact</h2>
-            <div class="grid">
-                <a href="mailto:m5ghaffa@uwaterloo.ca" class="card">
-                    <div class="icon">✉️</div>
-                    <h3 class="card-title">Email</h3>
-                    <p>m5ghaffa@uwaterloo.ca</p>
-                </a>
-                <a href="https://linkedin.com/in/monellie-ghaffari" class="card">
-                        <div class="icon">👩‍💼</div>
-                        <h3 class="card-title">LinkedIn</h3>
-                        <p>linkedin.com/in/monellie-ghaffari</p>
-                </a>
-                <!-- add github -->
+        </div>
+
+        <div>
+            <h3 style="color: #FFD700; margin-bottom: 1.5rem; font-size: 1.3rem;">Soft Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">👥</div>
+                    <h3>Leadership</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤝</div>
+                    <h3>Collaboration</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💬</div>
+                    <h3>Communication</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🧠</div>
+                    <h3>Problem-Solving</h3>
+                </div>
             </div>
-        </section>
-        <section id="other"></section>
-        <div class="line">
-            <hr><br>
-            <a id="topper" href="#top">Go to Top</a>
         </div>
     </div>
-    
+
+    <div class="section" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card" onclick="window.open('https://snowmark.vercel.app', '_blank')">
+                <div class="project-img">📚</div>
+                <div class="project-content">
+                    <h3 class="project-title">Study Time Tracker & Marks Predictor</h3>
+                    <p class="project-desc">Web application helping students manage study schedules and predict grades using data-driven insights.</p>
+                    <ul class="project-features">
+                        <li>Backend with Python/Flask and MySQL database for data persistence</li>
+                        <li>Responsive front-end using HTML, CSS, and JavaScript</li>
+                        <li>Followed Agile/Scrum methodology with weekly sprints</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.open('https://github.com/lavien/foodtopia', '_blank')">
+                <div class="project-img">🎮</div>
+                <div class="project-content">
+                    <h3 class="project-title">Foodtopia - Educational Children's Game</h3>
+                    <p class="project-desc">Java desktop game for ages 5-8 with engaging gameplay mechanics and educational content.</p>
+                    <ul class="project-features">
+                        <li>Built with Java Swing for GUI and AWT for graphics rendering</li>
+                        <li>Keyboard controls, collision detection, and multi-level progression</li>
+                        <li>Integrated audio playback and image rendering for interactive experience</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Swing</span>
+                        <span class="tech-tag">AWT</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.open('https://github.com/llie/good-person', '_blank')">
+                <div class="project-img">🎭</div>
+                <div class="project-content">
+                    <h3 class="project-title">Animated Decision Game</h3>
+                    <p class="project-desc">Interactive story game with branching narrative paths and dynamic sprite animations.</p>
+                    <ul class="project-features">
+                        <li>Built using Processing for graphics and animation</li>
+                        <li>Branching narrative system with multiple story paths</li>
+                        <li>Dynamic sprite animations based on player choices</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Processing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.open('https://github.com/llie/hangman', '_blank')">
+                <div class="project-img">🔤</div>
+                <div class="project-content">
+                    <h3 class="project-title">Hangman Game</h3>
+                    <p class="project-desc">Graphical word-guessing game with custom GUI and interactive gameplay mechanics.</p>
+                    <ul class="project-features">
+                        <li>Custom GUI using Java Swing for rendering</li>
+                        <li>Input validation, character tracking, and progressive drawing</li>
+                        <li>Event-driven programming for keyboard input and dynamic updates</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Swing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="courses">
+        <h2 class="section-title">Academic Coursework</h2>
+        
+        <div class="term-divider">
+            <div class="term-title">1A Term</div>
+            <div class="term-subtitle">Fall 2024</div>
+        </div>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-code">CS 137</div>
+                <div class="course-name">Programming Principles</div>
+                <div class="course-desc">Introduction to programming using C, covering fundamental concepts, control structures, functions, and basic data structures.</div>
+                <div class="course-relevance">💼 Essential for software development roles; demonstrates foundational programming skills and problem-solving abilities that employers value.</div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">SE 101</div>
+                <div class="course-name">Introduction to Methods of Software Engineering</div>
+                <div class="course-desc">Overview of software engineering principles, development methodologies, teamwork, and professional practices.</div>
+                <div class="course-relevance">💼 Critical for co-op positions; shows understanding of Agile, team collaboration, and professional software development practices.</div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">MATH 135</div>
+                <div class="course-name">Algebra (Honours)</div>
+                <div class="course-desc">Rigorous introduction to mathematical reasoning, proof techniques, number theory, and abstract algebra.</div>
+                <div class="course-relevance">💼 Strengthens logical thinking and problem-solving skills crucial for algorithm design and cryptography applications.</div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">MATH 117</div>
+                <div class="course-name">Calculus I</div>
+                <div class="course-desc">Limits, derivatives, applications of derivatives, and introduction to integration.</div>
+                <div class="course-relevance">💼 Foundation for machine learning, optimization algorithms, and computational analysis in software engineering.</div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">MATH 115</div>
+                <div class="course-name">Linear Algebra</div>
+                <div class="course-desc">Vectors, matrices, linear transformations, and systems of linear equations.</div>
+                <div class="course-relevance">💼 Essential for computer graphics, machine learning, data science, and many software engineering applications.</div>
+            </div>
+        </div>
+
+        <div class="term-divider">
+            <div class="term-title">1B Term</div>
+            <div class="term-subtitle">Winter 2025</div>
+        </div>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-code">CS 138</div>
+                <div class="course-name">Data Abstraction & Implementation</div>
+                <div class="course-desc">Object-oriented programming in C++, abstract data types, algorithms, and data structure implementation.</div>
+                <div class="course-relevance">💼 Core skills for software development; demonstrates proficiency in OOP and data structures critical for technical interviews.</div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">SE 102</div>
+                <div class="course-name">Seminar</div>
+                <div class="course-desc">Professional development, co-op preparation, technical communication, and career planning for software engineers.</div>
+                <div class="course-relevance">💼 Directly prepares for co-op search; covers resume writing, interviewing, and professional workplace skills.</div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">ECE 124</div>
+                <div class="course-name">Digital Circuits & Systems</div>
+                <div class="course-desc">Digital logic design, Boolean algebra, combinational and sequential circuits, and hardware description languages.</div>
+                <div class="course-relevance">💼 Relevant for embedded systems, hardware engineering, and understanding low-level computer architecture.</div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">ECE 140</div>
+                <div class="course-name">Linear Circuits</div>
+                <div class="course-desc">Circuit analysis techniques, operational amplifiers, and electrical system fundamentals.</div>
+                <div class="course-relevance">💼 Valuable for IoT, embedded systems, and hardware-software integration roles in tech companies.</div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">MATH 119</div>
+                <div class="course-name">Calculus II</div>
+                <div class="course-desc">Integration techniques, applications of integrals, sequences, series, and Taylor series.</div>
+                <div class="course-relevance">💼 Advanced mathematical foundation for computational modeling, numerical methods, and algorithm analysis.</div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">ECE 192</div>
+                <div class="course-name">Engineering Economics & Impact on Society</div>
+                <div class="course-desc">Economic analysis for engineering projects, sustainability, and societal impact of technology.</div>
+                <div class="course-relevance">💼 Demonstrates business acumen and understanding of technology's broader impact—valued in product management and startups.</div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-code">COMMST 23</div>
+                <div class="course-name">Effective Technical Communication</div>
+                <div class="course-desc">Technical writing, presentations, documentation, and professional communication for engineers.</div>
+                <div class="course-relevance">💼 Critical soft skill for co-op; ability to communicate technical concepts clearly is highly valued by employers.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="stats">
+        <h2 class="section-title">GitHub & LeetCode Stats</h2>
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3 style="color: #FFD700; margin-bottom: 1.5rem;">GitHub Profile</h3>
+                <div id="github-stats" style="text-align: center;">
+                    <div class="loading">Loading GitHub stats...</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <h3 style="color: #FFD700; margin-bottom: 1.5rem;">LeetCode Progress</h3>
+                <div id="leetcode-stats">
+                    <div class="loading">Loading LeetCode stats...</div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="stats-container" style="margin-top: 3rem;">
+            <div class="stat-card" style="grid-column: 1 / -1;">
+                <h3 style="color: #FFD700; margin-bottom: 1.5rem; text-align: center;">Recent Repositories</h3>
+                <div id="github-repos" class="repos-grid">
+                    <div class="loading">Loading repositories...</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="section" id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-grid">
+            <a href="mailto:monellie6@gmail.com" class="contact-card contact-link">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <p>monellie6@gmail.com</p>
+            </a>
+            <a href="https://linkedin.com/in/monellie-ghaffari" target="_blank" rel="noopener noreferrer" class="contact-card contact-link">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <p>linkedin.com/in/monellie-ghaffari</p>
+            </a>
+            <a href="https://github.com/monellie" target="_blank" rel="noopener noreferrer" class="contact-card contact-link">
+                <div class="contact-icon">👨‍💻</div>
+                <h3>GitHub</h3>
+                <p>github.com/monellie</p>
+            </a>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 Monellie Ghaffari</p>
+        <p>© 2026 Monellie Ghaffari | Built with passion at UWaterloo</p>
     </footer>
 
-  <!-- <script src="script.js"></script> -->
+    <script>
+        // Configuration - Replace with your usernames
+        const GITHUB_USERNAME = 'monellie';
+        const LEETCODE_USERNAME = 'monellie6';
+
+        // Fetch GitHub user data
+        async function fetchGitHubData() {
+            try {
+                const userResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
+                const userData = await userResponse.json();
+                
+                const reposResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`);
+                const reposData = await reposResponse.json();
+                
+                displayGitHubProfile(userData);
+                displayGitHubRepos(reposData);
+            } catch (error) {
+                document.getElementById('github-stats').innerHTML = '<p style="color: #ff6b6b;">Error loading GitHub data. Please check your username.</p>';
+                document.getElementById('github-repos').innerHTML = '<p style="color: #ff6b6b;">Error loading repositories.</p>';
+            }
+        }
+
+        // Fetch LeetCode stats
+        async function fetchLeetCodeData() {
+            try {
+                const response = await fetch(`https://leetcode-stats-api.herokuapp.com/${LEETCODE_USERNAME}`);
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    displayLeetCodeStats(data);
+                } else {
+                    throw new Error('Failed to fetch LeetCode data');
+                }
+            } catch (error) {
+                document.getElementById('leetcode-stats').innerHTML = `
+                    <p style="color: #aaa; text-align: center; margin-bottom: 1rem;">Unable to load LeetCode stats dynamically.</p>
+                    <div class="leetcode-badges" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;">
+                        <div class="badge">
+                            <div class="badge-number" id="easy-count">0</div>
+                            <div class="badge-label">Easy</div>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-number" id="medium-count">0</div>
+                            <div class="badge-label">Medium</div>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-number" id="hard-count">0</div>
+                            <div class="badge-label">Hard</div>
+                        </div>
+                    </div>
+                `;
+                // Use manual counts as fallback
+                setTimeout(() => {
+                    animateCount(document.getElementById('easy-count'), 25);
+                    animateCount(document.getElementById('medium-count'), 15);
+                    animateCount(document.getElementById('hard-count'), 3);
+                }, 100);
+            }
+        }
+
+        function displayLeetCodeStats(data) {
+            const easy = data.easySolved || 0;
+            const medium = data.mediumSolved || 0;
+            const hard = data.hardSolved || 0;
+            const total = data.totalSolved || 0;
+
+            const html = `
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <div style="font-size: 3rem; font-weight: bold; color: #FFD700;">${total}</div>
+                    <div style="color: #aaa;">Total Problems Solved</div>
+                </div>
+                <div class="leetcode-badges" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;">
+                    <div class="badge">
+                        <div class="badge-number" id="easy-count">0</div>
+                        <div class="badge-label">Easy</div>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-number" id="medium-count">0</div>
+                        <div class="badge-label">Medium</div>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-number" id="hard-count">0</div>
+                        <div class="badge-label">Hard</div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('leetcode-stats').innerHTML = html;
+            
+            // Animate the counts
+            setTimeout(() => {
+                animateCount(document.getElementById('easy-count'), easy);
+                animateCount(document.getElementById('medium-count'), medium);
+                animateCount(document.getElementById('hard-count'), hard);
+            }, 100);
+        }
+
+        // Fetch Waterloo weather
+        async function fetchWaterlooWeather() {
+            try {
+                // Using Open-Meteo API (no API key required)
+                // Coordinates for Waterloo, ON: 43.4643, -80.5204
+                const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=43.4643&longitude=-80.5204&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=America%2FToronto');
+                const data = await response.json();
+                
+                displayWeather(data);
+            } catch (error) {
+                document.getElementById('hero-weather-info').innerHTML = '<p style="color: #ff6b6b; text-align: center; padding: 0.5rem; font-size: 0.85rem;">Unable to load weather data.</p>';
+            }
+        }
+
+        function getWeatherEmoji(code) {
+            const weatherCodes = {
+                0: '☀️', 1: '🌤️', 2: '⛅', 3: '☁️',
+                45: '🌫️', 48: '🌫️',
+                51: '🌦️', 53: '🌦️', 55: '🌦️',
+                61: '🌧️', 63: '🌧️', 65: '🌧️',
+                71: '🌨️', 73: '🌨️', 75: '🌨️',
+                80: '🌦️', 81: '🌧️', 82: '⛈️',
+                95: '⛈️', 96: '⛈️', 99: '⛈️'
+            };
+            return weatherCodes[code] || '🌤️';
+        }
+
+        function getWeatherDescription(code) {
+            const descriptions = {
+                0: 'Clear Sky', 1: 'Mainly Clear', 2: 'Partly Cloudy', 3: 'Overcast',
+                45: 'Foggy', 48: 'Foggy',
+                51: 'Light Drizzle', 53: 'Drizzle', 55: 'Heavy Drizzle',
+                61: 'Light Rain', 63: 'Rain', 65: 'Heavy Rain',
+                71: 'Light Snow', 73: 'Snow', 75: 'Heavy Snow',
+                80: 'Light Showers', 81: 'Showers', 82: 'Heavy Showers',
+                95: 'Thunderstorm', 96: 'Thunderstorm', 99: 'Heavy Thunderstorm'
+            };
+            return descriptions[code] || 'Partly Cloudy';
+        }
+
+        function displayWeather(data) {
+            const current = data.current;
+            const temp = Math.round(current.temperature_2m);
+            const emoji = getWeatherEmoji(current.weather_code);
+            const description = getWeatherDescription(current.weather_code);
+            
+            const html = `
+                <div class="weather-display">
+                    <div class="weather-icon">${emoji}</div>
+                    <div class="weather-main">
+                        <div class="weather-temp">${temp}°C</div>
+                        <div class="weather-desc">${description}</div>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <div class="weather-detail">
+                        <div class="weather-detail-label">Humidity</div>
+                        <div class="weather-detail-value">${current.relative_humidity_2m}%</div>
+                    </div>
+                    <div class="weather-detail">
+                        <div class="weather-detail-label">Wind</div>
+                        <div class="weather-detail-value">${Math.round(current.wind_speed_10m)} km/h</div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('hero-weather-info').innerHTML = html;
+        }
+
+        function displayGitHubProfile(user) {
+            const html = `
+                <div class="github-profile">
+                    <img src="${user.avatar_url}" alt="${user.name}" class="github-avatar">
+                    <div class="github-info">
+                        <h4>${user.name || user.login}</h4>
+                        <p>@${user.login}</p>
+                        ${user.bio ? `<p style="margin-top: 0.5rem;">${user.bio}</p>` : ''}
+                    </div>
+                </div>
+                <div class="github-stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-item-number">${user.public_repos}</div>
+                        <div class="stat-item-label">Repositories</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item-number">${user.followers}</div>
+                        <div class="stat-item-label">Followers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item-number">${user.following}</div>
+                        <div class="stat-item-label">Following</div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('github-stats').innerHTML = html;
+        }
+
+        function displayGitHubRepos(repos) {
+            if (repos.length === 0) {
+                document.getElementById('github-repos').innerHTML = '<p style="color: #aaa; text-align: center;">No public repositories found.</p>';
+                return;
+            }
+
+            const html = repos.map(repo => `
+                <div class="repo-card">
+                    <div class="repo-name">${repo.name}</div>
+                    <div class="repo-desc">${repo.description || 'No description available'}</div>
+                    <div class="repo-stats">
+                        ${repo.language ? `<div class="repo-stat">🔵 ${repo.language}</div>` : ''}
+                        <div class="repo-stat">⭐ ${repo.stargazers_count}</div>
+                        <div class="repo-stat">🔀 ${repo.forks_count}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('github-repos').innerHTML = html;
+        }
+
+        // Create animated particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.width = Math.random() * 4 + 2 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Animate LeetCode problem counts
+        function animateCount(element, target) {
+            let count = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                count += increment;
+                if (count >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(count);
+                }
+            }, 20);
+        }
+
+        // Add intersection observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.skill-card, .project-card, .contact-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s, transform 0.6s';
+            observer.observe(card);
+        });
+
+        // Load all data when page loads
+        fetchGitHubData();
+        fetchLeetCodeData();
+        fetchWaterlooWeather();
+    </script>
 </body>
 </html>
