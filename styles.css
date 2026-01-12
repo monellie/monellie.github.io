@@ -23,8 +23,17 @@
     font-weight: bold;
 }
 
+@keyframes glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(121, 83, 189, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 30px rgba(191, 148, 255, 0.8));
+    }
+}
+
 body {
-    background-image: url("images/mtns-van.png");
+    background-image: url("images/city-from-plane.JPG");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -32,7 +41,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #000;
+    color: #EF798A;
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -57,7 +66,7 @@ body::before {
 }
 
 header {
-    color: #FF6392;
+    color: #bf94ff;
     font-family: "Inter";
     font-size: 2rem;
     padding: 0rem 0rem 4rem 0rem;
@@ -72,8 +81,8 @@ header {
 }
 
 .text-box {
-    background-color: rgba(249, 249, 249, 0.75);
-    color: #FF6392;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #bf94ff;
     padding: 4rem 6rem;
     border-radius: 8px;
     display: inline-block;
@@ -89,7 +98,7 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(206, 241, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 0;
   flex: 1;
 }
@@ -102,13 +111,17 @@ header {
   flex: 1;
 }
 
+h1 {
+    animation: glow 2s ease-in-out infinite;
+}
+
 nav {
     font-family: "InterBold";
-    background-color: rgba(206, 241, 255, 0.75);
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 nav a {
-    color: #FFA478;
+    color: #EF798A;
     padding: 1rem;
     margin: 0rem;
     text-decoration: none;
@@ -116,25 +129,59 @@ nav a {
 }
 
 nav a:hover {
-    color: #FF6392;
-    background-color: rgba(206, 241, 255);
+    color: #BF94FF;
+    background-color: rgba(0, 0, 0);
 }
 
-.skills-grid {
+.terminal {
+    color: #e0b0ff;
+    background-color: rgba(0, 0, 0);
+    border-style: solid;
+    border-radius: 15px;
+    border-color:rgb(184, 134, 222, 0.8);
+    border-width: 3px;
+    padding: 2rem;
+}
+
+.terminal-line {
+    font-family: 'Courier New', monospace;
+    color: #FFA7D0;
+}
+
+.prompt {
+    color: white;
+}
+
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 2rem;
 }
 
+.page-text {
+    color: #FFA7D0;
+    text-align: center;
+    /* padding-bottom: 1rem; */
+    padding: 0rem 0rem 2rem;
+    max-width: 800px;
+    margin: auto;
+    /* margin-top: 0rem; */
+}
+
 .card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(0, 0, 0, 0.5);
+  border-style: solid;
+  border-color:rgb(184, 134, 222, 0.5);
   border-radius: 15px;
+  border-width: 3px;
   padding: 2rem;
   transition: transform 0.3s;
 }
 
 .card:hover {
   transform: translateY(-8px);
+  background: rgba(75, 62, 91, 0.6);
+  border-color: #e0b0ff;
 }
 
 section, h2 {
@@ -143,16 +190,46 @@ section, h2 {
   margin: auto;
 }
 
+.section-title {
+    font-family: "InterBold";
+    font-size: xx-large;
+    text-align: center;
+}
+
+.card-title {
+    font-family: "InterBold";
+    color: #BF94FF;
+    text-align: center;
+}
+
 .info {
     padding: 2rem;
     max-width: 800px;
     margin: auto;
 }
 
+a {
+    text-decoration: none;
+    color: #7953BD;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #e0b0ff;
+}
+
+.line {
+    text-align: center;
+}
+
+#topper {
+    font-size: large;
+}
+
 footer {
   text-align: center;
   padding: 2rem;
-  background-color: #FF6392;
+  background-color: #32127A;
   color: #f9f9f9;
 }
 
