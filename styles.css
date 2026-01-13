@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 /* .content-on-img > *:first-child {
   padding-top: 0;
@@ -41,6 +42,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    padding-top: 3.5rem;
     color: #EF798A;
     position: relative;
     min-height: 100vh;
@@ -75,6 +77,7 @@ header {
 
 .hero {
   height: 100vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,8 +101,8 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+    z-index: -1;
   flex: 1;
 }
 
@@ -115,9 +118,20 @@ h1 {
     animation: glow 2s ease-in-out infinite;
 }
 
+body {
+    padding-top: 3.5rem; /* Space for fixed nav */
+}
+
 nav {
     font-family: "InterBold";
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    position: fixed; /* CHANGE FROM STICKY TO FIXED */
+    top: 0;
+    left: 0; /* ADD THIS */
+    width: 100%; /* ADD THIS */
+    z-index: 9999; /* Highest z-index */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 nav a {
@@ -126,6 +140,7 @@ nav a {
     margin: 0rem;
     text-decoration: none;
     display: inline-block;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
@@ -135,7 +150,8 @@ nav a:hover {
 
 .terminal {
     color: #e0b0ff;
-    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 32px rgba(191, 148, 255, 0.2); /* glow */
     border-style: solid;
     border-radius: 15px;
     border-color:rgb(184, 134, 222, 0.8);
@@ -160,29 +176,33 @@ nav a:hover {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  max-width: 1000px;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
 }
 
 .page-text {
-    color: #FFA7D0;
+    color: #FFB8D9;
     text-align: center;
     padding: 0rem 0rem 2rem;
-    max-width: 1100px;
+    max-width: 800px;
+    margin-bottom: 2rem;
     margin: auto;
+    font-size: large;
 }
 
 .tile-text {
-    color: #FFA7D0;
+    color: #FFB8D9;
     text-align: left;
-    padding: 1rem 0rem 2rem;
+    padding: 1rem 2rem 2rem;
     margin: auto;
 }
 
 .tile-list {
-    color: #FFA7D0;
+    color: #FFB8D9;
     text-align: left;
-    padding: 1rem 3rem 2rem;
+    padding: 1rem 4rem 2rem;
     margin: auto;
     /* list-style-type:circle; */
 }
@@ -193,38 +213,61 @@ li::marker {
   font-size: 1.2em;
 }
 
+.icon {
+    font-size: 4rem;
+    text-align: center;
+}
+
 .card {
-  background: rgba(0, 0, 0, 0.5);
-  border-style: solid;
-  border-color:rgb(184, 134, 222, 0.5);
-  border-radius: 15px;
-  border-width: 3px;
-  padding: 2rem;
-  transition: transform 0.3s;
+    background: rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    border-color:rgb(184, 134, 222, 0.5);
+    border-radius: 15px;
+    border-width: 3px;
+    padding: 2rem 0rem; /* only pads sides */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    opacity: 0; /* Start invisible for scroll animation */
+    transform: translateY(20px); /* Start below for scroll animation */
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  background: rgba(75, 62, 91, 0.6);
-  border-color: #e0b0ff;
+    transform: translateY(-10px) scale(1.02); /* scale */
+    background: rgba(75, 62, 91, 0.7); /* Lighter */
+    border-color: #e0b0ff;
+    box-shadow: 0 15px 40px rgba(191, 148, 255, 0.4);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
 }
 
 section, h2 {
-  padding: 2rem;
+  padding: 5rem 2rem;
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .section-title {
     font-family: "InterBold";
     font-size: xx-large;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .card-title {
     font-family: "InterBold";
     color: #BF94FF;
     text-align: center;
+}
+
+.project-card-title {
+    font-family: "InterBold";
+    color: #BF94FF;
+    text-align: center;
+    font-size: x-large;
+
 }
 
 .info {
@@ -243,11 +286,17 @@ a:hover {
     color: #e0b0ff;
 }
 
+.link-text {
+    font-family: "InterBold";
+    text-align: center;
+    color: #e0b0ff;
+}
+
 .line {
     text-align: center;
 }
 
-#topper {
+.line a {
     font-size: large;
 }
 
@@ -258,11 +307,16 @@ footer {
   color: #f9f9f9;
 }
 
-body > * {
-  position: relative;
-  z-index: 1;
+::selection {
+    background: rgba(255, 164, 120, 0.5);
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: #BF94FF;
+  background: #BF94FF;
 }
 
 ::selection {
-    background: rgba(255, 164, 120, 0.5);
+  /* color: #BF94FF; */
+  background: rgba(224, 176, 255, 0.5);
 }

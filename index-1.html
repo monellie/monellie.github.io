@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header id="top">
         <nav>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
@@ -45,35 +45,66 @@
             </div>
         </section>
         <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="grid">
+                <div class="card">
+                    <!-- <div class="icon">🥋</div> -->
+                    <h3 class="card-title">C</h3>
+                </div>
+                <div class="card">
+                    <!-- <div class="icon">🥋</div> -->
+                    <h3 class="card-title">C++</h3>
+                </div>
+                <div class="card">
+                    <!-- <div class="icon">🥋</div> -->
+                    <h3 class="card-title">Python</h3>
+                </div>
+                <div class="card">
+                    <!-- <div class="icon">🥋</div> -->
+                    <h3 class="card-title">Java</h3>
+                </div>
+                <div class="card">
+                    <!-- <div class="icon">🥋</div> -->
+                    <h3 class="card-title">HTML</h3>
+                </div>
+                <div class="card">
+                    <!-- <div class="icon">🥋</div> -->
+                    <h3 class="card-title">CSS</h3>
+                </div>
+                <div class="card">
+                    <!-- <div class="icon">🥋</div> -->
+                    <h3 class="card-title">JavaScript</h3>
+                </div>
+                <div class="card">
+                    <!-- <div class="icon">🥋</div> -->
+                    <h3 class="card-title">Processing</h3>
+                </div>
+            </div>
             <h2 class="section-title">Skills</h2>
             <div class="grid">
                 <div class="card">
                     <div class="icon">🥋</div>
                     <h3 class="card-title">Karate</h3>
-                    <p>Black belt, instructor</p>
+                    <p class="tile-text">Black belt, instructor</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🥋</div>
+                    <h3 class="card-title">Piano</h3>
+                    <p class="tile-text">Level 10 Practical</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🥋</div>
+                    <h3 class="card-title">Karate</h3>
+                    <p class="tile-text">Black belt, instructor</p>
                 </div>
             </div>
         </section>
         <section id="projects">
             <h2 class="section-title">Projects</h2>
-            <p class="page-text">Here I'll probably put up projects I've worked on.</p>
             <div class="project-grid">
-                <div class="card">
-                    <div class="icon">1️⃣</div>
-                    <h3 class="card-title">Foodtopia</h3>
-                    <p class="tile-text"> 
-                        Java desktop game for ages 5-8. Includes keyboard controls, collision detection, 
-                        and multi-level progression system. Integrated audio playback and image rendering 
-                        for interactive educational experience.
-                    </p>
-                    <ul class="tile-list">
-                        <li>Java Swing</li>
-                        <li>Collision detection</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <div class="icon">2️⃣</div>
-                    <h3 class="card-title">Snowmark</h3>
+                <a class="card" href="https://snowmark.vercel.app">
+                    <div class="icon">☃️</div>
+                    <h3 class="project-card-title">Snowmark</h3>
                     <p class="tile-text">
                         Snowmark is a grade prediction tool that helps students study smarter by learning 
                         from past performance to calculate the exact hours needed to reach their academic 
@@ -87,11 +118,39 @@
                         <li>CSS</li>
                         <li>JavaScript</li>
                     </ul>
+                </a>
+                <div class="card">
+                    <div class="icon">🌽</div>
+                    <h3 class="project-card-title">Foodtopia</h3>
+                    <p class="tile-text"> 
+                        Java desktop game for ages 5-8. Includes keyboard controls, collision detection, 
+                        and multi-level progression system. Integrated audio playback and image rendering 
+                        for interactive educational experience.
+                    </p>
+                    <ul class="tile-list">
+                        <li>Java Swing</li>
+                        <li>Collision detection</li>
+                        <li>OOP</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <div class="icon">3️⃣</div>
-                    <h3 class="card-title">Project3</h3>
-                    <p>description</p>
+                    <div class="icon" style="color: white;">ๅ</div>
+                    <h3 class="project-card-title">Hangman Game</h3>
+                    <p class="tile-text">Interactive story game with branching narrative paths and resulting sprite animations using Processing</p>
+                    <ul class="tile-list">
+                        <li>Java</li>
+                        <li>Java Swing</li>
+                        <li>GUI Development</li>
+                        <li>OOP</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="icon">👍</div>
+                    <h3 class="project-card-title">Animated Decision Game</h3>
+                    <p class="tile-text">Interactive story game with branching narrative paths and resulting sprite animations using Processing</p>
+                    <ul class="tile-list">
+                        <li>Processing</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -101,12 +160,12 @@
                 <a href="mailto:monellie6@gmail.com" class="card">
                     <div class="icon">✉️</div>
                     <h3 class="card-title">Email</h3>
-                    <p>monellie6@gmail.com</p>
+                    <p class="link-text">monellie6@gmail.com</p>
                 </a>
                 <a href="https://linkedin.com/in/monellie-ghaffari" class="card">
-                        <div class="icon">👩‍💼</div>
-                        <h3 class="card-title">LinkedIn</h3>
-                        <p>linkedin.com/in/monellie-ghaffari</p>
+                    <div class="icon">👩‍💼</div>
+                    <h3 class="card-title">LinkedIn</h3>
+                    <p class="link-text">linkedin.com/in/monellie-ghaffari</p>
                 </a>
                 <!-- add github -->
             </div>
@@ -122,6 +181,6 @@
         <p>&copy; 2026 Monellie Ghaffari</p>
     </footer>
 
-  <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
 </body>
 </html>
