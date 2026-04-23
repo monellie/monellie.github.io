@@ -1,4 +1,4 @@
-<p class="subtitle">Software Engineering Student @<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -138,6 +138,38 @@
             margin-bottom: 2rem;
         }
 
+        /* Co-op badge in hero */
+        .coop-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, rgba(220, 0, 0, 0.15), rgba(255, 215, 0, 0.1));
+            border: 1px solid rgba(220, 0, 0, 0.4);
+            border-radius: 50px;
+            padding: 0.6rem 1.4rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(220, 0, 0, 0.15);
+        }
+
+        .coop-badge .coop-dot {
+            width: 8px;
+            height: 8px;
+            background: #e00;
+            border-radius: 50%;
+            animation: pulse-red 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 0, 0, 0.5); }
+            50% { box-shadow: 0 0 0 6px rgba(220, 0, 0, 0); }
+        }
+
+        .coop-badge strong {
+            color: #FFD700;
+        }
+
         .hero-weather {
             background: rgba(255, 255, 255, 0.05);
             padding: 1rem 1.5rem;
@@ -176,6 +208,94 @@
             background: linear-gradient(135deg, #FFD700, #FFA500);
             margin: 1rem auto;
             border-radius: 2px;
+        }
+
+        /* Co-op Experience Section */
+        .coop-section {
+            background: linear-gradient(135deg, rgba(220, 0, 0, 0.08), rgba(255, 215, 0, 0.05));
+            border: 1px solid rgba(220, 0, 0, 0.25);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coop-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #cc0000, #FFD700, #cc0000);
+        }
+
+        .coop-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .bmo-logo-placeholder {
+            width: 100px;
+            height: 70px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #fff;
+            flex-shrink: 0;
+            letter-spacing: -1px;
+            box-shadow: 0 4px 20px rgba(220, 0, 0, 0.4);
+        }
+
+        .coop-info h3 {
+            font-size: 1.5rem;
+            color: #FFD700;
+            margin-bottom: 0.3rem;
+        }
+
+        .coop-info .coop-company {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .coop-info .coop-meta {
+            color: #aaa;
+            font-size: 0.9rem;
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .coop-info .coop-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .coop-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
+        }
+
+        .coop-tag {
+            background: rgba(220, 0, 0, 0.2);
+            border: 1px solid rgba(220, 0, 0, 0.35);
+            color: #ffaaaa;
+            padding: 0.3rem 0.85rem;
+            border-radius: 15px;
+            font-size: 0.82rem;
         }
 
         .skills-grid {
@@ -303,6 +423,7 @@
         .terminal-line:nth-child(2) { animation-delay: 1s; }
         .terminal-line:nth-child(3) { animation-delay: 1.5s; }
         .terminal-line:nth-child(4) { animation-delay: 2s; }
+        .terminal-line:nth-child(5) { animation-delay: 2.5s; }
 
         @keyframes fadeIn {
             to { opacity: 1; }
@@ -310,6 +431,7 @@
 
         .prompt { color: #FFD700; }
         .output { color: #4CAF50; }
+        .output-highlight { color: #ff9944; }
 
         .contact-grid {
             display: grid;
@@ -384,6 +506,14 @@
             .nav-links a {
                 padding: 1rem 1rem;
                 font-size: 0.85rem;
+            }
+            .coop-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .coop-info .coop-meta {
+                justify-content: center;
             }
         }
 
@@ -599,6 +729,89 @@
             margin-bottom: 2rem;
         }
 
+        /* Term dividers for courses */
+        .term-divider {
+            text-align: center;
+            margin: 3rem 0 1.5rem;
+        }
+
+        .term-title {
+            font-size: 1.5rem;
+            color: #FFD700;
+            font-weight: 700;
+        }
+
+        .term-subtitle {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
+        }
+
+        .course-code {
+            font-size: 0.85rem;
+            color: #FFD700;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.05em;
+        }
+
+        .course-name {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #fff;
+        }
+
+        .course-desc {
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+
+        .course-relevance {
+            color: #888;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            padding-top: 0.6rem;
+        }
+
+        /* Completed term badge */
+        .term-completed {
+            display: inline-block;
+            background: rgba(76, 175, 80, 0.15);
+            border: 1px solid rgba(76, 175, 80, 0.4);
+            color: #4CAF50;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            margin-left: 0.75rem;
+            vertical-align: middle;
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
             .stats-container {
                 grid-template-columns: 1fr;
@@ -618,6 +831,7 @@
         <div class="nav-content">
             <div class="nav-links">
                 <a href="#about">About</a>
+                <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
                 <a href="#courses">Courses</a>
                 <a href="#projects">Projects</a>
@@ -631,7 +845,12 @@
         <div class="particles" id="particles"></div>
         <div class="hero-content">
             <h1>Monellie Ghaffari</h1>
-            <p class="subtitle">Software Engineering Student @ UWaterloo | Currently in 1B</p>
+            <p class="subtitle">Software Engineering Student @ UWaterloo | 1B Complete</p>
+
+            <div class="coop-badge">
+                <div class="coop-dot"></div>
+                <span>Currently on Co-op &mdash; <strong>BMO Financial Group</strong> &bull; May–Aug 2026</span>
+            </div>
             
             <div class="hero-weather">
                 <h3><span style="font-size: 1.2rem;">🎓</span> Campus Weather - Waterloo, ON</h3>
@@ -648,15 +867,43 @@
 
         <div class="terminal">
             <div class="terminal-line"><span class="prompt">$</span> student.getCurrentStatus()</div>
-            <div class="terminal-line"><span class="output">→ Currently in 1B at University of Waterloo</span></div>
-            <div class="terminal-line"><span class="output">→ Actively seeking Summer 2026 Co-op opportunities</span></div>
+            <div class="terminal-line"><span class="output">→ Completed 1B at University of Waterloo</span></div>
+            <div class="terminal-line"><span class="output-highlight">→ Co-op: Software Developer Intern @ BMO &mdash; May to August 2026</span></div>
+            <div class="terminal-line"><span class="output">→ Returning to 2A in Fall 2026</span></div>
             <div class="terminal-line"><span class="output">→ Passionate about building impactful software solutions</span></div>
         </div>
         <p style="text-align: center; color: #aaa; max-width: 800px; margin: 2rem auto; line-height: 1.8;">
-            I'm a first-year Software Engineering student at the University of Waterloo currently in my 1B term, with a passion for creating 
-            innovative solutions and learning new technologies. I'm eager to apply my skills in a Summer 2026 co-op role where 
-            I can contribute to meaningful projects while continuing to grow as a developer.
+            I'm a Software Engineering student at the University of Waterloo, having completed my 1B term. I'm currently working as a
+            Software Developer Intern at BMO (Bank of Montreal) from May to August 2026. I'm passionate about building impactful software and excited to bring the skills
+            I develop on co-op back into my studies in the fall.
         </p>
+    </div>
+
+    <!-- Co-op Experience Section -->
+    <div class="section" id="experience">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="coop-section">
+            <div class="coop-header">
+                <div class="bmo-logo-placeholder"><img src="bmo_logo.png" style="width:75px;"></div>
+                <div class="coop-info">
+                    <div class="coop-company">BMO Financial Group</div>
+                    <h3>Software Developer Intern — Co-op</h3>
+                    <div class="coop-meta">
+                        <span>📍 Toronto, ON</span>
+                        <span>🗓️ May 2026 – August 2026</span>
+                        <span>💼 First Co-op Term</span>
+                    </div>
+                    <div class="coop-tags">
+                        <span class="coop-tag">Software Development</span>
+                        <span class="coop-tag">Financial Technology</span>
+                    </div>
+                </div>
+            </div>
+            <p style="color: #ccc; line-height: 1.8; font-size: 0.95rem;">
+                Working as a Software Developer Intern at one of Canada's largest banks, contributing to software initiatives that support BMO's digital transformation.
+            </p>
+        </div>
     </div>
 
     <div class="section" id="skills">
@@ -859,7 +1106,7 @@
         <h2 class="section-title">Academic Coursework</h2>
         
         <div class="term-divider">
-            <div class="term-title">1A Term</div>
+            <div class="term-title">1A Term <span class="term-completed">✓ Complete</span></div>
             <div class="term-subtitle">Fall 2024</div>
         </div>
         <div class="course-grid">
@@ -900,7 +1147,7 @@
         </div>
 
         <div class="term-divider">
-            <div class="term-title">1B Term</div>
+            <div class="term-title">1B Term <span class="term-completed">✓ Complete</span></div>
             <div class="term-subtitle">Winter 2025</div>
         </div>
         <div class="course-grid">
@@ -953,6 +1200,11 @@
                 <div class="course-relevance">💼 Critical soft skill for co-op; ability to communicate technical concepts clearly is highly valued by employers.</div>
             </div>
         </div>
+
+        <div class="term-divider">
+            <div class="term-title">Co-op 1</div>
+            <div class="term-subtitle">Spring 2026 &mdash; BMO Financial Group</div>
+        </div>
     </div>
 
     <div class="section" id="stats">
@@ -973,7 +1225,6 @@
             </div>
         </div>
 
-        
         <div class="stats-container" style="margin-top: 3rem;">
             <div class="stat-card" style="grid-column: 1 / -1;">
                 <h3 style="color: #FFD700; margin-bottom: 1.5rem; text-align: center;">Recent Repositories</h3>
@@ -981,7 +1232,6 @@
                     <div class="loading">Loading repositories...</div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 
@@ -1011,11 +1261,9 @@
     </footer>
 
     <script>
-        // Configuration - Replace with your usernames
         const GITHUB_USERNAME = 'monellie';
         const LEETCODE_USERNAME = 'monellie6';
 
-        // Fetch GitHub user data
         async function fetchGitHubData() {
             try {
                 const userResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
@@ -1032,7 +1280,6 @@
             }
         }
 
-        // Fetch LeetCode stats
         async function fetchLeetCodeData() {
             try {
                 const response = await fetch(`https://leetcode-stats-api.herokuapp.com/${LEETCODE_USERNAME}`);
@@ -1061,7 +1308,6 @@
                         </div>
                     </div>
                 `;
-                // Use manual counts as fallback
                 setTimeout(() => {
                     animateCount(document.getElementById('easy-count'), 25);
                     animateCount(document.getElementById('medium-count'), 15);
@@ -1099,7 +1345,6 @@
             
             document.getElementById('leetcode-stats').innerHTML = html;
             
-            // Animate the counts
             setTimeout(() => {
                 animateCount(document.getElementById('easy-count'), easy);
                 animateCount(document.getElementById('medium-count'), medium);
@@ -1107,14 +1352,10 @@
             }, 100);
         }
 
-        // Fetch Waterloo weather
         async function fetchWaterlooWeather() {
             try {
-                // Using Open-Meteo API (no API key required)
-                // Coordinates for Waterloo, ON: 43.4643, -80.5204
                 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=43.4643&longitude=-80.5204&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=America%2FToronto');
                 const data = await response.json();
-                
                 displayWeather(data);
             } catch (error) {
                 document.getElementById('hero-weather-info').innerHTML = '<p style="color: #ff6b6b; text-align: center; padding: 0.5rem; font-size: 0.85rem;">Unable to load weather data.</p>';
@@ -1225,7 +1466,7 @@
             document.getElementById('github-repos').innerHTML = html;
         }
 
-        // Create animated particles
+        // Animated particles
         const particlesContainer = document.getElementById('particles');
         for (let i = 0; i < 50; i++) {
             const particle = document.createElement('div');
@@ -1238,7 +1479,7 @@
             particlesContainer.appendChild(particle);
         }
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1249,7 +1490,6 @@
             });
         });
 
-        // Animate LeetCode problem counts
         function animateCount(element, target) {
             let count = 0;
             const increment = target / 50;
@@ -1264,7 +1504,6 @@
             }, 20);
         }
 
-        // Add intersection observer for fade-in animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1281,7 +1520,6 @@
             observer.observe(card);
         });
 
-        // Load all data when page loads
         fetchGitHubData();
         fetchLeetCodeData();
         fetchWaterlooWeather();
