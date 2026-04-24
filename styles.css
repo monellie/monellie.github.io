@@ -3,9 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* .content-on-img > *:first-child {
-  padding-top: 0;
-} */
+
 @font-face {
     font-family: "Inter";
     src: url("fonts/InterVariable.ttf");
@@ -24,6 +22,12 @@
     font-weight: bold;
 }
 
+@font-face {
+    font-family: "Poppins";
+    src: url("fonts/Poppins-Regular.ttf");
+    font-weight: normal;
+}
+
 @keyframes glow {
     0%, 100% {
         filter: drop-shadow(0 0 20px rgba(121, 83, 189, 0.5));
@@ -34,11 +38,7 @@
 }
 
 body {
-    /* background-image: url("images/city-from-plane.JPG");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; */
-    background: #0a0a0a;
+    background: linear-gradient(160deg, #fdf6ff 0%, #f5eaff 30%, #fff0f7 60%, #f0e8ff 100%);
     font-family: "Inter";
     line-height: 1.6;
     margin: 0;
@@ -69,7 +69,7 @@ body::before {
 }
 
 header {
-    color: #bf94ff;
+    color: #A970FF;
     font-family: "Inter";
     font-size: 2rem;
     /* padding: 0rem 0rem 4rem 0rem; */
@@ -82,14 +82,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("images/city-from-plane.JPG");
+    /* background-image: url("images/city-from-plane.JPG"); */
     background-size: cover;
     background-position: center;
 }
 
 .text-box {
-    background-color: rgba(0, 0, 0, 0.75);
-    color: #bf94ff;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #A970FF;
     padding: 4rem 6rem;
     border-radius: 8px;
     display: inline-block;
@@ -97,15 +97,15 @@ header {
 
 .content-on-img {
     position: relative;
-    padding: 2rem;
+    padding: 0rem;
     flex: 1;
 }
 
-.content-on-img::before {
+/* .content-on-img::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(255, 255, 255);
     z-index: -1;
   flex: 1;
 }
@@ -116,7 +116,7 @@ header {
   max-width: 1100px;
   margin: auto;
   flex: 1;
-}
+} */
 
 h1 {
     animation: glow 2s ease-in-out infinite;
@@ -128,14 +128,14 @@ body {
 
 nav {
     font-family: "InterBold";
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     position: fixed; /* CHANGED FROM STICKY TO FIXED */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 9999; /* Highest z-index */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
 }
 
 nav a {
@@ -148,14 +148,25 @@ nav a {
 }
 
 nav a:hover {
-    color: #BF94FF;
-    background-color: rgba(0, 0, 0);
+    color: #A970FF;
+    background-color: rgb(255, 255, 255);
+}
+
+#skills {
+    background-color: transparent;
+    max-width: 100%;
+    padding: 5rem 2rem;
+}
+.restrict {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 2rem;
 }
 
 .terminal {
-    color: #e0b0ff;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 8px 32px rgba(191, 148, 255, 0.2); /* glow */
+    color: #C670FF;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2); /* glow */
     border-style: solid;
     border-radius: 15px;
     border-color:rgb(184, 134, 222, 0.8);
@@ -165,11 +176,11 @@ nav a:hover {
 
 .terminal-line {
     font-family: 'Courier New', monospace;
-    color: #FFA7D0;
+    color: #EE6D80;
 }
 
 .prompt {
-    color: white;
+    color: black;
 }
 
 .grid {
@@ -187,24 +198,26 @@ nav a:hover {
 }
 
 .page-text {
-    color: #FFB8D9;
+    color: #FF479D;
     text-align: center;
     padding: 0rem 0rem 2rem;
     max-width: 800px;
     margin-bottom: 2rem;
     margin: auto;
     font-size: large;
+    font-family: "Poppins";
 }
 
 .tile-text {
-    color: #FFB8D9;
+    color: #FF479D;
     text-align: left;
     padding: 1rem 2rem 2rem;
     margin: auto;
+    font-family: "Poppins";
 }
 
 .tile-list {
-    color: #FFB8D9;
+    color: #FF479D;
     text-align: left;
     padding: 1rem 4rem 2rem;
     margin: auto;
@@ -223,22 +236,23 @@ li::marker {
 }
 
 .card {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.6);
     border-style: solid;
-    border-color:rgb(184, 134, 222, 0.5);
+    border-color: rgba(184, 134, 222, 0.3);
     border-radius: 15px;
-    border-width: 3px;
-    padding: 2rem 0rem; /* only pads sides */
+    border-width: 1.5px;
+    padding: 2rem 0rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
-    opacity: 0; /* Start invisible for scroll animation */
-    transform: translateY(20px); /* Start below for scroll animation */
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 24px rgba(198, 112, 255, 0.08);
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .card:hover {
     transform: translateY(-10px) scale(1.02); /* scale */
-    background: rgba(75, 62, 91, 0.7); /* Lighter */
-    border-color: #e0b0ff;
+    background: rgba(224, 199, 255, 0.7); /* Lighter */
+    border-color: #C670FF;
     box-shadow: 0 15px 40px rgba(191, 148, 255, 0.4);
 }
 
@@ -247,18 +261,24 @@ html {
     scroll-padding-top: 60px;
 }
 
-section, h2 {
+section {
   padding: 5rem 2rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+section > h2 {
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .section-title {
-    color: white;
+    color: black;
     font-family: "InterBold";
     font-size: xx-large;
     text-align: center;
     margin-bottom: 2rem;
+    margin-top: 2rem;
     position: relative; /* Needed for ::after positioning */
 }
 
@@ -274,13 +294,13 @@ section, h2 {
 
 .card-title {
     font-family: "InterBold";
-    color: #BF94FF;
+    color: #A970FF;
     text-align: center;
 }
 
 .project-card-title {
     font-family: "InterBold";
-    color: #BF94FF;
+    color: #A970FF;
     text-align: center;
     font-size: x-large;
 
@@ -299,13 +319,13 @@ a {
 
 a:hover {
     text-decoration: none;
-    color: #e0b0ff;
+    color: #C670FF;
 }
 
 .link-text {
     font-family: "InterBold";
     text-align: center;
-    color: #e0b0ff;
+    color: #C670FF;
 }
 
 .line {
@@ -323,16 +343,113 @@ footer {
   color: #f9f9f9;
 }
 
+#blob-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
 ::selection {
     background: rgba(255, 164, 120, 0.5);
 }
 
 ::-moz-selection { /* Code for Firefox */
-  color: #BF94FF;
-  background: #BF94FF;
+  color: #A970FF;
+  background: #A970FF;
 }
 
 ::selection {
   /* color: #BF94FF; */
   background: rgba(224, 176, 255, 0.5);
+}
+
+/* === SKILL CHIPS (Technical Skills) === */
+.skill-chip {
+    background: #1a1a2e;
+    border: 1.5px solid #C670FF;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-family: 'Courier New', monospace;
+    color: #C670FF;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.skill-chip::before {
+    content: '<';
+    color: #EF798A;
+    margin-right: 2px;
+}
+
+.skill-chip::after {
+    content: '/>';
+    color: #EF798A;
+    margin-left: 2px;
+}
+
+.skill-chip:hover {
+    background: #2a1a4e;
+    border-color: #bf94ff;
+    box-shadow: 0 0 12px rgba(198, 112, 255, 0.4);
+    transform: translateY(-4px);
+}
+
+/* === TOOL COMMANDS (Tools & Frameworks) === */
+.tool-cmd {
+    background: #0d0d0d;
+    border: 1.5px solid #333;
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    font-family: 'Courier New', monospace;
+    color: #aaffaa;
+    font-size: 0.9rem;
+    text-align: left;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tool-cmd .cmd-prompt {
+    color: #EF798A;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.tool-cmd .cmd-icon {
+    font-size: 1.2rem;
+}
+
+.tool-cmd:hover {
+    border-color: #aaffaa;
+    box-shadow: 0 0 12px rgba(100, 255, 100, 0.2);
+    transform: translateY(-4px);
+    background: #111;
+}
+
+/* === PERSONAL SKILL BADGES === */
+.personal-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(239,121,138,0.1));
+    border: 2px solid rgba(239, 121, 138, 0.4);
+    border-radius: 20px;
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.personal-card:hover {
+    border-color: #EF798A;
+    background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(239,121,138,0.2));
+    box-shadow: 0 10px 30px rgba(239, 121, 138, 0.25);
+    transform: translateY(-8px);
 }
