@@ -3,182 +3,316 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monellie's Website</title>
+  <title>Monellie Ghaffari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header id="top">
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <a href="#other">Other</a>
-        </nav>
-        <div class="hero">
-            <div class="text-box">
-                <h1>Monellie Ghaffari</h1>
-                <p class="subtitle">
-                    Software Engineering Student @ UWaterloo | 1B
-                </p>
-            </div>
-        </div>
-    </header>
 
-    <div class="content-on-img">
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <p class="page-text">
-                Hi! My name is Monellie Ghaffari. I'm a first-year Software Engineering
-                 student at the University of Waterloo in my first co-op term. I love 
-                 building things that solve real problems and picking up new technologies 
-                 along the way. This term, I am a Software Developer Intern at BMO.
-            </p>
-
-            <div class="terminal">
-                <div class="terminal-line">
-                    <span class="prompt">$ student.getCurrentStatus()
-                </div>
-                <div class="terminal-line">- Completed 1B at University of Waterloo</div>
-                <div class="terminal-line">- Co-op: Software Developer Intern @ BMO (May - August 2026)</div>
-                <div class="terminal-line">- Returning to 2A in Fall 2026</div>
-                <div class="terminal-line">- Passionate about building impactful software solutions</div>
-
-            </div>
-        </section>
-        <section id="skills">
-            <div class="restrict">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="grid">
-                    <div class="skill-chip">C</div>
-                    <div class="skill-chip">C++</div>
-                    <div class="skill-chip">Python</div>
-                    <div class="skill-chip">Java</div>
-                    <div class="skill-chip">HTML</div>
-                    <div class="skill-chip">CSS</div>
-                    <div class="skill-chip">JavaScript</div>
-                    <div class="skill-chip">Processing</div>
-                </div>
-            </div>
-
-            <div class="restrict">
-                <h2 class="section-title">Tools & Frameworks</h2>
-
-                <div class="grid">
-                    <div class="tool-cmd">
-                        <span class="cmd-prompt">$</span>
-                        <span class="cmd-icon">🔧</span> git
-                    </div>
-                    <div class="tool-cmd"><span class="cmd-prompt">$</span><span class="cmd-icon">🐙</span> github</div>
-                    <div class="tool-cmd"><span class="cmd-prompt">$</span><span class="cmd-icon">💻</span> vscode</div>
-                    <div class="tool-cmd"><span class="cmd-prompt">$</span><span class="cmd-icon">🗄️</span> mysql</div>
-                    <div class="tool-cmd"><span class="cmd-prompt">$</span><span class="cmd-icon">🌶️</span> flask</div>
-                    <div class="tool-cmd"><span class="cmd-prompt">$</span><span class="cmd-icon">🧪</span> pytest</div>
-                </div>
-            </div>
-            <div class="restrict">
-                <h2 class="section-title">Personal Skills</h2>
-                <div class="grid">
-                    <div class="personal-card">
-                        <div class="icon">🥋</div>
-                        <h3 class="card-title">Karate</h3>
-                        <p class="tile-text">Black belt, instructor</p>
-                    </div>
-                    <div class="personal-card">
-                        <div class="icon">🎹</div>
-                        <h3 class="card-title">Piano</h3>
-                        <p class="tile-text">Level 10 Practical</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="projects">
-            <h2 class="section-title">Projects</h2>
-            <div class="project-grid">
-                <a class="card" href="https://snowmark.vercel.app">
-                    <div class="icon">☃️</div>
-                    <h3 class="project-card-title">Snowmark</h3>
-                    <p class="tile-text">
-                        Snowmark is a grade prediction tool that helps students study smarter by learning 
-                        from past performance to calculate the exact hours needed to reach their academic 
-                        goals.
-                    </p>
-                    <ul class="tile-list">
-                        <li>Python</li>
-                        <li>Flask</li>
-                        <li>MySQL</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </a>
-                <div class="card">
-                    <div class="icon">🌽</div>
-                    <h3 class="project-card-title">Foodtopia</h3>
-                    <p class="tile-text"> 
-                        Java desktop game for ages 5-8. Includes keyboard controls, collision detection, 
-                        and multi-level progression system. Integrated audio playback and image rendering 
-                        for interactive educational experience.
-                    </p>
-                    <ul class="tile-list">
-                        <li>Java Swing</li>
-                        <li>Collision detection</li>
-                        <li>OOP</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <div class="icon" style="color: white;">ๅ</div>
-                    <h3 class="project-card-title">Hangman Game</h3>
-                    <p class="tile-text">Interactive story game with branching narrative paths and resulting sprite 
-                        animations using Processing</p>
-                    <ul class="tile-list">
-                        <li>Java</li>
-                        <li>Java Swing</li>
-                        <li>GUI Development</li>
-                        <li>OOP</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <div class="icon">👍</div>
-                    <h3 class="project-card-title">Animated Decision Game</h3>
-                    <p class="tile-text">Interactive story game with branching narrative paths and resulting sprite animations using Processing</p>
-                    <ul class="tile-list">
-                        <li>Processing</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section id="contact">
-            <h2 class="section-title">Contact</h2>
-            <div class="grid">
-                <a href="mailto:monellie6@gmail.com" class="card">
-                    <div class="icon">✉️</div>
-                    <h3 class="card-title">Email</h3>
-                    <p class="link-text">monellie6@gmail.com</p>
-                </a>
-                <a href="https://linkedin.com/in/monellie-ghaffari" class="card">
-                    <div class="icon">👩‍💼</div>
-                    <h3 class="card-title">LinkedIn</h3>
-                    <p class="link-text">linkedin.com/in/monellie-ghaffari</p>
-                </a>
-                <a href="https://github.com/monellie" class="card">
-                    <div class="icon">👩‍💼</div>
-                    <h3 class="card-title">GitHub</h3>
-                    <p class="link-text">github.com/monellie</p>
-                </a>
-            </div>
-        </section>
-        <section id="other"></section>
-        <div class="line">
-            <hr><br>
-            <a id="topper" href="#top">Go to Top</a>
-        </div>
+  <nav>
+    <a href="#top">
+    <img href="#top" class="nav-brand" src="images/MG.png" alt="MG"></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
     </div>
-    
-    <footer>
-        <p>&copy; 2026 Monellie Ghaffari</p>
-    </footer>
+  </nav>
 
-    <script src="script.js"></script>
+  <header id="top">
+    <div class="hero">
+      <div class="hero-inner">
+        <h1>Monellie<br>Ghaffari</h1>
+        <div class="hero-rule"></div>
+        <p class="subtitle">Software Engineering Student &mdash; University of Waterloo</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 01 ABOUT -->
+    <section id="about">
+      <div class="section-inner">
+        <p class="section-label">01 &mdash; About</p>
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <img class="portrait" src="images/face3.png" alt="Illustrated portrait of Monellie">
+          <div class="about-text-block">
+            <p class="about-text">
+              Hi! I'm a first-year Software Engineering student at the University of Waterloo.
+              I love building things that solve real problems and picking up new technologies
+              along the way. This term, I'm a Software Developer Intern at BMO, where I've been
+              shipping production UI components for Online Banking for Business.
+            </p>
+            <div class="terminal">
+              <div class="terminal-line"><span class="prompt">$ student.getCurrentStatus()</span></div>
+              <div class="terminal-line">&mdash; BASc Software Engineering @ UWaterloo</div>
+              <div class="terminal-line">&mdash; Cumulative Average: 95.23%</div>
+              <div class="terminal-line">&mdash; Co-op: Software Developer Intern @ BMO</div>
+              <div class="terminal-line">&nbsp;&nbsp; (May &ndash; August 2026)</div>
+              <div class="terminal-line">&mdash; Returning to 2A in Fall 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 EXPERIENCE -->
+    <section id="experience">
+      <div class="section-inner">
+        <p class="section-label">02 &mdash; Experience</p>
+        <h2 class="section-title">Experience</h2>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div>
+              <span class="exp-org">BMO Financial Group</span>
+              <span class="exp-role">Software Developer Intern</span>
+            </div>
+            <span class="exp-date">MAY 2026 &ndash; AUG 2026</span>
+          </div>
+          <ul class="exp-list">
+            <li>Developed and shipped 5+ production UI components (Angular, React Native) for Lexicon, the design system powering BMO's Online Banking for Business web and mobile applications</li>
+            <li>Translated Figma designs into accessible, reusable components in agile sprint cycles, remediating WCAG issues with accessibility testers ahead of each release</li>
+            <li>Independently built an LLM-optimized knowledge base of component development standards, applying generative engine optimization research to enable AI-assisted screen/component creation; presented outcomes to senior engineering leadership</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div>
+              <span class="exp-org">Math Club &mdash; William Lyon Mackenzie CI</span>
+              <span class="exp-role">Lessons Executive</span>
+            </div>
+            <span class="exp-date">AUG 2024 &ndash; JUNE 2025</span>
+          </div>
+          <ul class="exp-list">
+            <li>Designed and delivered weekly competitive math lessons to 4&ndash;20 students</li>
+          </ul>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-header">
+            <div>
+              <span class="exp-org">Spirit of Math Schools &amp; Northern Karate Schools</span>
+              <span class="exp-role">Assistant Teacher &amp; Volunteer Assistant</span>
+            </div>
+            <span class="exp-date">2021 &ndash; 2024</span>
+          </div>
+          <ul class="exp-list">
+            <li>Taught problem-solving strategies and assisted instructors in leading classes of 20+ students</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 PROJECTS -->
+    <section id="projects">
+      <div class="section-inner">
+        <p class="section-label">03 &mdash; Projects</p>
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+
+          <a class="card featured" href="https://snowmark.vercel.app">
+            <div class="featured-inner">
+              <div>
+                <img class = "icon" src="images/Project Olaf Logo.svg" alt="Snowmark Logo">
+                <h3 class="project-card-title">Snowmark</h3>
+                <p class="tile-text">
+                  Study tracker that helps students manage schedules and predict grades.
+                  Built backend with Python/Flask and MySQL; responsive front-end with
+                  HTML, CSS, and JavaScript. Followed Agile/Scrum with weekly sprints.
+                </p>
+              </div>
+              <ul class="tile-list">
+                <li>Python</li>
+                <li>Flask</li>
+                <li>MySQL</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
+          </a>
+
+          <a class="card" href="https://github.com/lavienlan/foodtopia">
+            <img class = "icon" src="images/master corn.png" alt="Foodtopia corn">
+            <h3 class="project-card-title">Foodtopia</h3>
+            <p class="tile-text">
+              Co-developed Java desktop game for ages 5&ndash;8 using Swing for GUI and
+              AWT for graphics. Keyboard controls, collision detection, multi-level
+              progression, audio playback and image rendering.
+            </p>
+            <ul class="tile-list">
+              <li>Java</li>
+              <li>Java Swing</li>
+              <li>OOP</li>
+            </ul>
+          </a>
+
+          <div class="card">
+            <img class = "icon" src="images/hangman.png" alt="Hangman">
+            <h3 class="project-card-title">Hangman Game</h3>
+            <p class="tile-text">
+              Graphical word-guessing game with a custom GUI in Java Swing. Input
+              validation, game logic, and event-driven keyboard handling with
+              progressive visual state updates.
+            </p>
+            <ul class="tile-list">
+              <li>Java</li>
+              <li>Java Swing</li>
+              <li>GUI Development</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 SKILLS -->
+    <section id="skills">
+      <div class="section-inner">
+        <p class="section-label">04 &mdash; Skills</p>
+        <h2 class="section-title">Skills</h2>
+
+        <h3 class="sub-title">Languages</h3>
+        <div class="skill-grid">
+          <div class="skill-chip">TypeScript</div>
+          <div class="skill-chip">JavaScript</div>
+          <div class="skill-chip">C</div>
+          <div class="skill-chip">C++</div>
+          <div class="skill-chip">Python</div>
+          <div class="skill-chip">Java</div>
+          <div class="skill-chip">Swift</div>
+          <div class="skill-chip">HTML</div>
+          <div class="skill-chip">CSS</div>
+          <div class="skill-chip">Processing</div>
+        </div>
+
+        <h3 class="sub-title">Tools &amp; Frameworks</h3>
+        <div class="tool-grid">
+          <div class="tool-cmd"><span class="cmd-prompt">$</span> Angular</div>
+          <div class="tool-cmd"><span class="cmd-prompt">$</span> React Native</div>
+          <div class="tool-cmd"><span class="cmd-prompt">$</span> Flask</div>
+          <div class="tool-cmd"><span class="cmd-prompt">$</span> MySQL</div>
+          <div class="tool-cmd"><span class="cmd-prompt">$</span> Git</div>
+          <div class="tool-cmd"><span class="cmd-prompt">$</span> GitHub</div>
+          <div class="tool-cmd"><span class="cmd-prompt">$</span> VS Code</div>
+          <div class="tool-cmd"><span class="cmd-prompt">$</span> Xcode</div>
+          <div class="tool-cmd"><span class="cmd-prompt">$</span> Pytest</div>
+          <div class="tool-cmd"><span class="cmd-prompt">$</span> Figma</div>
+        </div>
+
+        <h3 class="sub-title">Practices</h3>
+        <div class="tag-grid">
+          <div class="tag">Agile (Scrum, Sprints)</div>
+          <div class="tag">Accessibility (WCAG)</div>
+          <div class="tag">Object-Oriented Programming</div>
+          <div class="tag">Software Design</div>
+        </div>
+
+        <h3 class="sub-title">Soft Skills</h3>
+        <div class="tag-grid">
+          <div class="tag">Leadership</div>
+          <div class="tag">Collaboration</div>
+          <div class="tag">Technical Communication</div>
+          <div class="tag">Problem-Solving</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 05 AWARDS -->
+    <section id="awards">
+      <div class="section-inner">
+        <p class="section-label">05 &mdash; Awards</p>
+        <h2 class="section-title">Awards &amp; Certifications</h2>
+
+        <div class="award-entry">
+          <span class="award-name">DECA &mdash; ICDC <span class="award-detail">(top ~1% internationally)</span></span>
+          <span class="award-date">2023 &ndash; 2025</span>
+        </div>
+        <div class="award-entry">
+          <span class="award-name">University of Toronto High School Design Competition &mdash; First Place</span>
+          <span class="award-date">NOV 2024</span>
+        </div>
+        <div class="award-entry">
+          <span class="award-name">Lagrange Math Contest &mdash; Gold Medal</span>
+          <span class="award-date">2021</span>
+        </div>
+        <div class="award-entry">
+          <span class="award-name">Black Belt in Karate &mdash; Northern Karate Schools</span>
+          <span class="award-date">NOV 2022</span>
+        </div>
+        <div class="award-entry">
+          <span class="award-name">Level 10 Piano Practical &mdash; Royal Conservatory of Music</span>
+          <span class="award-date">JULY 2024</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 06 CONTACT -->
+    <section id="contact">
+      <div class="section-inner">
+        <p class="section-label">06 &mdash; Contact</p>
+        <h2 class="section-title">Get In Touch</h2>
+
+        <form class="contact-form" action="https://formspree.io/f/xgaepdnb" method="POST" autocomplete="off">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <button type="submit">Send Message</button>
+        </form>
+
+        <h3 class="sub-title">Or find me elsewhere</h3>
+        <div class="contact-grid">
+          <a href="mailto:monellie6@gmail.com" class="card">
+            <img class = "icon" src="images/Mail.png" alt="Envelope">
+            <h3 class="card-title">Email</h3>
+            <p class="link-text">monellie6@gmail.com</p>
+          </a>
+          <a href="https://linkedin.com/in/monellie-ghaffari" class="card">
+            <img class = "icon" src="images/Tie.png" alt="Tie">
+            <h3 class="card-title">LinkedIn</h3>
+            <p class="link-text">linkedin.com/in/monellie-ghaffari</p>
+          </a>
+          <a href="https://github.com/monellie" class="card">
+            <img class = "icon" src="images/Github.svg" alt="GitHub cat">
+            <h3 class="card-title">GitHub</h3>
+            <p class="link-text">github.com/monellie</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="back-to-top">
+    <a href="#top">Back to Top &uarr;</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Monellie Ghaffari</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
